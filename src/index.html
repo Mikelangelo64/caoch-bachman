@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/img/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="./assets/img/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+
+    <title>NV Coding</title>
+  </head>
+
+  <body>
+    <div class="v-preloader" id="v-preloader">
+      <div class="v-preloader__logo">
+        <img src="./assets/img/logo.svg" alt="logo" />
+      </div>
+    </div>
+
+    <div class="video-bg">
+      <video
+        disablePictureInPicture
+        preload="metadata"
+        playsinline
+        loop
+        muted
+        autoplay
+        class="video-bg__video"
+      >
+        <source data-src="./assets/video/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="container">
+      <header class="header">
+        <div class="_container header__container">
+          <div class="header__wrapper">
+            <div class="header__buttons">
+              <button
+                class="menu-burger popup-open"
+                aria-label="menu"
+                data-popup="_popup-menu"
+              >
+                <span></span>
+              </button>
+
+              <div class="header__logo">
+                <a href="#" class="logo-link anchor" data-goto=".banner">
+                  <img src="./assets/img/logo.svg" alt="logo" />
+                </a>
+              </div>
+            </div>
+
+            <nav class="header__navigation menu _desk">
+              <ul class="menu__list">
+                <li class="li">
+                  <a href="#" class="menu__item anchor" data-goto=".services"
+                    >Services</a
+                  >
+                </li>
+
+                <li class="li">
+                  <a
+                    href="#"
+                    class="menu__item anchor"
+                    data-goto=".technologies"
+                    >Technologies</a
+                  >
+                </li>
+
+                <li class="li">
+                  <a href="#" class="menu__item anchor" data-goto=".help"
+                    >Industries</a
+                  >
+                </li>
+
+                <li class="li">
+                  <a
+                    href="#"
+                    class="button menu__button anchor"
+                    data-goto=".contact"
+                  >
+                    <span class="button__inner">Contact form</span>
+                  </a>
+                </li>
+              </ul>
+
+              <a
+                href="#"
+                class="button-light menu__button _mobile anchor"
+                data-goto=".contact"
+              >
+                <span class="button__inner">Contact us</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div
+          class="popup popup-menu"
+          data-popupname="_popup-menu"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="popup__overlay"></div>
+          <div class="popup__additional"></div>
+          <div class="popup__scroll">
+            <div class="popup__wrapper">
+              <button class="popup__close">
+                <img src="./assets/img/popup-close.svg" alt="close" />
+              </button>
+
+              <div class="popup__content">
+                <div class="popup__logo">
+                  <a href="#" class="logo-link anchor" data-goto=".services">
+                    <img src="./assets/img/logo.svg" alt="logo" />
+                  </a>
+                </div>
+                <!-- <div class="popup__header">
+  
+                </div> -->
+
+                <nav class="menu _mobile">
+                  <ul class="menu__list">
+                    <li class="li">
+                      <a
+                        href="#"
+                        class="menu__item anchor"
+                        data-goto=".services"
+                        >Services</a
+                      >
+                    </li>
+
+                    <li class="li">
+                      <a
+                        href="#"
+                        class="menu__item anchor"
+                        data-goto=".technologies"
+                        >Technologies</a
+                      >
+                    </li>
+
+                    <li class="li">
+                      <a href="#" class="menu__item anchor" data-goto=".help"
+                        >Industries</a
+                      >
+                    </li>
+
+                    <li class="li">
+                      <a
+                        href="#"
+                        class="menu__item anchor"
+                        data-goto=".contact"
+                      >
+                        Contact Us
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="popup popup-thanks"
+          data-popupname="_popup-thanks"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="popup__overlay"></div>
+          <div class="popup__scroll">
+            <div class="popup__wrapper">
+              <button class="popup__close">
+                <img src="./assets/img/popup-close.svg" alt="close" />
+              </button>
+
+              <div class="popup__content">
+                <div class="popup__title__container">
+                  <p class="popup__title">Thank you for your message!</p>
+                  <p class="popup__subtitle">We will reply shortly.</p>
+                </div>
+
+                <div class="popup__action">
+                  <!-- <a href="#" class="popup__button button"
+                    ><span>На головну</span></a
+                  > -->
+                  <button class="popup__button button">
+                    <span>ok</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="popup popup-error"
+          data-popupname="_popup-error"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="popup__overlay"></div>
+          <div class="popup__scroll">
+            <div class="popup__wrapper">
+              <button class="popup__close">
+                <img src="./assets/img/popup-close.svg" alt="close" />
+              </button>
+
+              <div class="popup__content">
+                <div class="popup__title__container">
+                  <p class="popup__title">Ooops</p>
+                  <p class="popup__subtitle">
+                    We have some problems, please try your send later
+                  </p>
+                </div>
+
+                <div class="popup__action">
+                  <!-- <a href="#" class="popup__button button"
+                    ><span>На головну</span></a
+                  > -->
+                  <button class="popup__button button">
+                    <span>ok</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ut
+        expedita nam doloremque in ipsum alias accusamus ullam voluptatem, aut
+        praesentium! Neque similique perferendis omnis debitis voluptatibus
+        repellendus dolor suscipit sunt, autem soluta, ipsa unde, natus incidunt
+        vitae dolorum veniam iste. Quae totam, placeat vitae ab sed temporibus
+        eius dicta maxime porro consectetur facere optio odio ipsum veniam
+        minima impedit, laborum sunt quibusdam? Libero natus facilis quaerat
+        beatae maiores ab aut debitis reprehenderit assumenda expedita!
+        Repudiandae exercitationem commodi consectetur, aspernatur aut veritatis
+        ea pariatur cum, perspiciatis dignissimos libero incidunt tenetur
+        voluptas? Ipsum aliquid voluptates hic architecto praesentium
+        perferendis in officia numquam laboriosam omnis, provident excepturi
+        laudantium cupiditate ratione ea blanditiis eum minus unde! Aspernatur
+        minima dignissimos nisi corporis, illum fugiat, ullam aperiam repellat,
+        quisquam iure nam voluptatem deleniti ut eaque in praesentium doloribus
+        molestiae maiores eveniet dolor tempore sapiente enim? Perspiciatis
+        culpa temporibus odit? Ut accusamus sint similique? Quidem sit dolores
+        corporis perspiciatis laudantium ad debitis illum dicta reprehenderit
+        ipsa dolore, necessitatibus suscipit temporibus molestias maiores,
+        repellendus velit. Possimus necessitatibus laborum ad, voluptas cum
+        omnis expedita ex eveniet soluta quia quis a nostrum aperiam ducimus
+        corrupti pariatur ut amet rerum iste recusandae eum, odio ab? Quibusdam
+        saepe minima ex maiores at laboriosam velit amet ullam quo deserunt quia
+        culpa voluptatibus porro in consequuntur, quis, harum inventore eos
+        adipisci temporibus omnis. Libero quia nesciunt et omnis unde explicabo
+        beatae doloribus nisi, architecto ipsa voluptate consequuntur incidunt
+        odio a modi, similique eos! Ratione provident minima maiores nihil iste
+        rerum labore deserunt culpa nostrum sed veritatis cumque debitis sit
+        totam porro omnis, dignissimos sunt! Ipsam natus deserunt quam hic
+        provident ratione tenetur corrupti. Fugit expedita veniam delectus est
+        nostrum temporibus voluptatem, repellendus officiis. Cum libero
+        aspernatur illum corrupti suscipit consectetur, quo ipsam, blanditiis
+        consequatur dolores optio recusandae in aliquid esse delectus tempore!
+        Quod quos corporis nobis laudantium nemo recusandae quaerat autem
+        doloremque voluptates sint sunt aliquid explicabo rerum consequatur,
+        veniam aliquam nesciunt, reprehenderit ex architecto consectetur maxime
+        error ratione. Laudantium magnam dicta quaerat tempore, est nesciunt
+        aliquid rem iure accusamus, voluptatum dolorum ratione illo fuga saepe
+        quas voluptates, voluptatibus tenetur unde aperiam? Aliquam possimus
+        reiciendis iure dolor ex repudiandae? Deserunt magni neque consequatur
+        iusto dignissimos voluptatum sequi autem dicta reiciendis? Nisi dolore
+        sit inventore ea aliquam, tempore minus esse, amet, assumenda eligendi
+        modi quaerat. Vel nobis unde aspernatur distinctio minima officiis
+        praesentium, natus laboriosam, porro saepe odio iusto ducimus modi sequi
+        illum consequatur harum tenetur accusamus fuga recusandae quisquam ipsam
+        enim voluptas quam. Corporis nobis deleniti tenetur sint obcaecati
+        molestias non consequatur praesentium voluptate quam in, porro quasi,
+        cum alias modi labore? Sapiente quae rem nam, labore minima reiciendis
+        nemo assumenda qui? Doloremque impedit officiis sed itaque soluta,
+        mollitia qui accusantium ipsum eos laudantium possimus consequatur,
+        numquam deserunt fugiat distinctio delectus ducimus deleniti atque
+        placeat! Consequatur eaque corrupti atque quia ad suscipit ipsam, quod
+        placeat explicabo voluptatem, voluptate eius maiores magni quo
+        voluptates non in? Dolorem cupiditate adipisci similique velit minima
+        ratione perspiciatis incidunt dolores rerum, sunt corporis temporibus
+        consequuntur accusamus ab vero quo. Saepe omnis eligendi voluptatum
+        quas, repellendus dolores, minima molestias quibusdam modi dolore ab,
+        fuga tempore assumenda ex porro. Ab minima dolorem esse in illo ullam
+        fugit laboriosam quasi eos amet! Voluptatum commodi dolor unde facilis
+        perspiciatis cumque libero aspernatur maxime debitis itaque. Quidem
+        tenetur vitae ratione doloremque nemo et placeat mollitia aliquid
+        molestias labore dignissimos, ut fugit expedita eius aliquam ipsum
+        aperiam nostrum accusamus illum quaerat natus! Voluptas quibusdam quod
+        nisi odit dolores error quia, provident, aliquid, eos harum delectus
+        voluptate. Asperiores molestias, quaerat adipisci voluptatibus saepe
+        fuga id. Dignissimos eum architecto ex atque autem maiores? Libero,
+        placeat laborum? Magni qui quam, aperiam ducimus veritatis quod
+        recusandae ipsum quae quaerat nisi iure consequatur beatae unde pariatur
+        nobis atque molestias at fugit. Eveniet, quaerat doloribus dolorem
+        molestias accusamus ipsa nisi earum quasi minus ratione repellendus
+        officiis consequatur distinctio tenetur. Tempora vitae doloribus,
+        repellendus labore provident ut earum deserunt delectus repudiandae
+        consectetur asperiores tempore sequi quae, libero iusto autem amet
+        deleniti incidunt commodi mollitia, at adipisci eum suscipit voluptatum?
+        Ipsam, aut soluta. Ex qui itaque, architecto exercitationem sit eligendi
+        sunt velit amet voluptates aspernatur totam cum. Ducimus delectus error
+        deleniti, consectetur laborum quae minus vel? Aliquam officia repellat
+        dolorum officiis atque reprehenderit quis fuga. Dolorum, ratione iure!
+        Pariatur ullam sint, doloremque dolore odio fugit accusantium deserunt
+        dolores maiores temporibus porro reprehenderit autem, possimus debitis
+        reiciendis accusamus quaerat! Eum vel assumenda nesciunt necessitatibus
+        nulla sint nobis voluptatibus doloremque, ullam illo sequi ea quam
+        voluptate, provident est similique. Labore explicabo, blanditiis,
+        provident enim nulla odit vitae sunt impedit inventore minima commodi
+        aperiam similique sed. At, voluptatum. Quidem ex beatae sequi odit, quam
+        facere! Placeat reiciendis atque ea consectetur tenetur quo perspiciatis
+        quidem dolor, non quaerat laudantium, id quia beatae! Molestiae quos
+        aperiam sapiente perspiciatis deleniti ratione tempora? Voluptatibus,
+        eveniet consectetur ipsam fuga sunt modi asperiores sint doloremque
+        eaque adipisci, dolores expedita labore quam blanditiis laboriosam
+        perspiciatis. Rem itaque a ipsa mollitia nihil unde, laudantium, fuga
+        cumque, saepe praesentium nemo eum earum nesciunt! Animi laborum
+        deleniti, distinctio temporibus dignissimos maiores? Consequuntur iste
+        sequi alias dolor dolore ex quo quae commodi, optio nobis, modi beatae
+        laboriosam perspiciatis voluptates molestias deserunt, reprehenderit
+        cumque! Minima earum animi itaque repellendus, ex sequi eum, saepe ab
+        optio dolores quas minus, quo corporis quidem ratione laborum ipsum
+        accusamus nihil! Debitis perspiciatis, ex voluptates nobis quo assumenda
+        nesciunt aspernatur temporibus minus minima sequi modi repudiandae quam
+        reiciendis quaerat ratione pariatur doloribus illum? Quaerat accusantium
+        saepe, quibusdam quam, quasi neque minima dicta ipsam laborum modi
+        facere non eligendi architecto quisquam voluptate cum tenetur, magni
+        numquam voluptatem. Error libero non aliquam dicta eos dolore impedit,
+        vitae ea omnis eius atque asperiores? Asperiores quam explicabo nulla
+        debitis, commodi error natus quis impedit non. Tempore, doloribus
+        asperiores quae eveniet sit cumque sunt ipsa, perspiciatis, nobis
+        deserunt aperiam reiciendis dolores laboriosam officia accusantium
+        molestias laudantium est? Reprehenderit quos eius nulla asperiores esse
+        inventore quas in eligendi, nostrum magni numquam dolorum animi
+        provident itaque velit eveniet doloremque ratione quia ipsum, dolor
+        cumque impedit deleniti exercitationem quidem? Laudantium.
+      </section>
+
+      <footer class="footer">
+        <div class="_container footer__container">
+          <div class="footer__wrapper">
+            <div class="footer__controls">
+              <a
+                href="#"
+                class="logo-link footer__logo anchor"
+                data-goto=".banner"
+              >
+                <img src="./assets/img/logo.svg" alt="logo" />
+              </a>
+
+              <button class="footer__button">
+                <img src="./assets/img/arrow-footer.svg" alt="open nav" />
+              </button>
+            </div>
+
+            <div class="footer__content">
+              <div class="footer__header">
+                <nav class="footer-nav">
+                  <ul class="footer-nav__list">
+                    <li class="footer-nav__li">
+                      <a
+                        href="#"
+                        class="footer-nav__item anchor"
+                        data-goto=".services"
+                      >
+                        Services
+                      </a>
+                    </li>
+
+                    <li class="footer-nav__li">
+                      <a
+                        href="#"
+                        class="footer-nav__item anchor"
+                        data-goto=".technologies"
+                      >
+                        Technologies
+                      </a>
+                    </li>
+
+                    <li class="footer-nav__li">
+                      <a
+                        href="#"
+                        class="footer-nav__item anchor"
+                        data-goto=".help"
+                      >
+                        Industries
+                      </a>
+                    </li>
+
+                    <li class="footer-nav__li">
+                      <a
+                        href="#"
+                        class="footer-nav__item anchor"
+                        data-goto=".contact"
+                      >
+                        Contact form
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+
+                <a
+                  href="https://www.linkedin.com/company/nvcoding"
+                  target="_blank"
+                  class="footer__social desktop"
+                >
+                  <svg
+                    width="23"
+                    height="20"
+                    viewBox="0 0 23 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.29175 5.49898H3.26964C2.35543 5.49898 1.60343 5.23761 1.01362 4.71487C0.423808 4.19212 0.128906 3.537 0.128906 2.74949C0.128906 1.9484 0.43118 1.28989 1.03574 0.773931C1.64029 0.257974 2.40704 0 3.33599 0C4.23545 0 4.98008 0.25458 5.56989 0.763747C6.1597 1.27291 6.46197 1.92803 6.47672 2.72912C6.47672 3.53021 6.17813 4.19212 5.58095 4.71487C4.98376 5.23761 4.22071 5.49898 3.29175 5.49898ZM17.602 19.9796H22.2025C22.3647 19.9796 22.5011 19.9287 22.6117 19.8269C22.7223 19.725 22.7776 19.5995 22.7776 19.4501V12.1385C22.7776 11.1473 22.6448 10.2648 22.3794 9.49084C22.114 8.7169 21.727 8.05839 21.2182 7.51528C20.7095 6.97216 20.0939 6.55805 19.3714 6.27291C18.6489 5.98778 17.8232 5.84521 16.8942 5.84521C16.0685 5.84521 15.3644 5.96062 14.782 6.19145C14.1995 6.42227 13.7166 6.69382 13.3332 7.00611V6.70061C13.3332 6.55126 13.2743 6.42227 13.1563 6.31365C13.0383 6.20502 12.8983 6.15071 12.7361 6.15071H8.13556C8.06183 6.15071 7.9881 6.16429 7.91438 6.19145C7.84065 6.2186 7.7743 6.25933 7.71532 6.31365C7.65634 6.36796 7.6121 6.42906 7.58261 6.49694C7.55312 6.56483 7.54575 6.63951 7.56049 6.72098C7.57524 7.00611 7.58261 7.82756 7.58261 9.18534C7.58261 10.5431 7.57892 11.9756 7.57155 13.4827C7.56418 14.9898 7.56049 16.3544 7.56049 17.5764V19.4501C7.54575 19.518 7.55681 19.5859 7.59367 19.6538C7.63053 19.7217 7.67108 19.7828 7.71532 19.8371C7.7743 19.8914 7.84065 19.9321 7.91438 19.9593C7.9881 19.9864 8.06183 20 8.13556 20H12.7361C12.8983 20 13.0383 19.9457 13.1563 19.8371C13.2743 19.7284 13.3332 19.5995 13.3332 19.4501V12.3218C13.3332 12.1317 13.3443 11.9654 13.3664 11.8228C13.3885 11.6802 13.4143 11.5682 13.4438 11.4868C13.5323 11.3103 13.7129 11.0659 13.9857 10.7536C14.2585 10.4413 14.6824 10.2851 15.2575 10.2851C15.4787 10.2851 15.8252 10.3836 16.297 10.5804C16.7689 10.7773 17.0048 11.4596 17.0048 12.6273V19.4501C17.0048 19.5995 17.0638 19.725 17.1817 19.8269C17.2997 19.9287 17.4398 19.9796 17.602 19.9796ZM21.6053 18.9002H18.177V12.6273C18.177 11.5275 17.9227 10.6789 17.414 10.0815C16.9053 9.48404 16.1864 9.18534 15.2575 9.18534C14.6087 9.18534 14.0263 9.35506 13.5102 9.6945C12.9941 10.0339 12.6107 10.4956 12.3601 11.0794C12.2863 11.2288 12.2347 11.4053 12.2052 11.609C12.1757 11.8126 12.161 12.0502 12.161 12.3218V18.9002H8.73274C8.73274 18.3842 8.73642 17.59 8.7438 16.5173C8.75117 15.4447 8.75486 14.3143 8.75486 13.1263V9.71487C8.75486 8.62864 8.74748 7.80041 8.73274 7.23014H12.161V8.37067C12.1315 8.43856 12.1205 8.50984 12.1278 8.58452C12.1352 8.6592 12.161 8.73048 12.2052 8.79837C12.2642 8.89342 12.3379 8.9647 12.4264 9.01222C12.5149 9.05974 12.6107 9.0835 12.7139 9.0835H12.7582C12.8909 9.0835 13.0088 9.04616 13.1121 8.97149C13.2153 8.89681 13.2816 8.80516 13.3111 8.69654C13.6208 8.27563 14.0447 7.87848 14.5829 7.50509C15.1211 7.1317 15.8915 6.94501 16.8942 6.94501C17.6462 6.94501 18.3134 7.06042 18.8959 7.29124C19.4783 7.52207 19.9723 7.85811 20.3778 8.29939C20.7833 8.74067 21.0892 9.28377 21.2957 9.92872C21.5021 10.5737 21.6053 11.3102 21.6053 12.1385V18.9002ZM5.59201 19.9796H0.991501C0.829303 19.9796 0.689225 19.9287 0.571263 19.8269C0.4533 19.725 0.39432 19.5995 0.39432 19.4501V6.70061C0.39432 6.55126 0.4533 6.42227 0.571263 6.31365C0.689225 6.20502 0.829303 6.15071 0.991501 6.15071H5.59201C5.75421 6.15071 5.89428 6.20502 6.01225 6.31365C6.13021 6.42227 6.18919 6.55126 6.18919 6.70061V19.4501C6.18919 19.5995 6.13021 19.725 6.01225 19.8269C5.89428 19.9287 5.75421 19.9796 5.59201 19.9796ZM5.01694 18.9002H1.58868V7.23014H5.01694V18.9002ZM1.86515 1.53768C2.24116 1.23218 2.73143 1.07943 3.33599 1.07943C3.9258 1.07943 4.39764 1.23218 4.75153 1.53768C5.10542 1.84318 5.28973 2.24711 5.30448 2.74949C5.30448 3.25187 5.12016 3.6558 4.75153 3.9613C4.3829 4.2668 3.89631 4.41955 3.29175 4.41955H3.26964C2.69457 4.41955 2.22273 4.26341 1.8541 3.95112C1.48546 3.63883 1.30115 3.23829 1.30115 2.74949C1.30115 2.24711 1.48915 1.84318 1.86515 1.53768Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <div class="footer__bottom">
+                <div class="footer__title__container mobile title__container">
+                  <p class="footer__title title">Contacts</p>
+                </div>
+
+                <div class="footer-adress">
+                  <div class="footer-adress__item">
+                    <p class="footer-adress__title">Email:</p>
+
+                    <div class="footer-adress__value">
+                      <a
+                        href="mailto:contact@nvcoding.com"
+                        class="footer-adress__link"
+                        >contact@nvcoding.com</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="footer-adress__item">
+                    <p class="footer-adress__title">Phone numbers:</p>
+
+                    <div class="footer-adress__value">
+                      <a href="tel:+380963930332" class="footer-adress__link"
+                        >+38 (096) 393 0332</a
+                      >
+
+                      <a href="tel:+380677182466" class="footer-adress__link"
+                        >+38 (067) 718 24 66</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="footer-adress__item">
+                    <p class="footer-adress__title">Address:</p>
+
+                    <div class="footer-adress__value">
+                      <a
+                        href="https://goo.gl/maps/1sCqU9i73uVM8qv1A"
+                        target="_blank"
+                        class="footer-adress__link"
+                      >
+                        Lviv, Horodnitska 9
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="https://www.linkedin.com/company/nvcoding"
+                  target="_blank"
+                  class="footer__social mobile"
+                >
+                  <svg
+                    width="23"
+                    height="20"
+                    viewBox="0 0 23 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.29175 5.49898H3.26964C2.35543 5.49898 1.60343 5.23761 1.01362 4.71487C0.423808 4.19212 0.128906 3.537 0.128906 2.74949C0.128906 1.9484 0.43118 1.28989 1.03574 0.773931C1.64029 0.257974 2.40704 0 3.33599 0C4.23545 0 4.98008 0.25458 5.56989 0.763747C6.1597 1.27291 6.46197 1.92803 6.47672 2.72912C6.47672 3.53021 6.17813 4.19212 5.58095 4.71487C4.98376 5.23761 4.22071 5.49898 3.29175 5.49898ZM17.602 19.9796H22.2025C22.3647 19.9796 22.5011 19.9287 22.6117 19.8269C22.7223 19.725 22.7776 19.5995 22.7776 19.4501V12.1385C22.7776 11.1473 22.6448 10.2648 22.3794 9.49084C22.114 8.7169 21.727 8.05839 21.2182 7.51528C20.7095 6.97216 20.0939 6.55805 19.3714 6.27291C18.6489 5.98778 17.8232 5.84521 16.8942 5.84521C16.0685 5.84521 15.3644 5.96062 14.782 6.19145C14.1995 6.42227 13.7166 6.69382 13.3332 7.00611V6.70061C13.3332 6.55126 13.2743 6.42227 13.1563 6.31365C13.0383 6.20502 12.8983 6.15071 12.7361 6.15071H8.13556C8.06183 6.15071 7.9881 6.16429 7.91438 6.19145C7.84065 6.2186 7.7743 6.25933 7.71532 6.31365C7.65634 6.36796 7.6121 6.42906 7.58261 6.49694C7.55312 6.56483 7.54575 6.63951 7.56049 6.72098C7.57524 7.00611 7.58261 7.82756 7.58261 9.18534C7.58261 10.5431 7.57892 11.9756 7.57155 13.4827C7.56418 14.9898 7.56049 16.3544 7.56049 17.5764V19.4501C7.54575 19.518 7.55681 19.5859 7.59367 19.6538C7.63053 19.7217 7.67108 19.7828 7.71532 19.8371C7.7743 19.8914 7.84065 19.9321 7.91438 19.9593C7.9881 19.9864 8.06183 20 8.13556 20H12.7361C12.8983 20 13.0383 19.9457 13.1563 19.8371C13.2743 19.7284 13.3332 19.5995 13.3332 19.4501V12.3218C13.3332 12.1317 13.3443 11.9654 13.3664 11.8228C13.3885 11.6802 13.4143 11.5682 13.4438 11.4868C13.5323 11.3103 13.7129 11.0659 13.9857 10.7536C14.2585 10.4413 14.6824 10.2851 15.2575 10.2851C15.4787 10.2851 15.8252 10.3836 16.297 10.5804C16.7689 10.7773 17.0048 11.4596 17.0048 12.6273V19.4501C17.0048 19.5995 17.0638 19.725 17.1817 19.8269C17.2997 19.9287 17.4398 19.9796 17.602 19.9796ZM21.6053 18.9002H18.177V12.6273C18.177 11.5275 17.9227 10.6789 17.414 10.0815C16.9053 9.48404 16.1864 9.18534 15.2575 9.18534C14.6087 9.18534 14.0263 9.35506 13.5102 9.6945C12.9941 10.0339 12.6107 10.4956 12.3601 11.0794C12.2863 11.2288 12.2347 11.4053 12.2052 11.609C12.1757 11.8126 12.161 12.0502 12.161 12.3218V18.9002H8.73274C8.73274 18.3842 8.73642 17.59 8.7438 16.5173C8.75117 15.4447 8.75486 14.3143 8.75486 13.1263V9.71487C8.75486 8.62864 8.74748 7.80041 8.73274 7.23014H12.161V8.37067C12.1315 8.43856 12.1205 8.50984 12.1278 8.58452C12.1352 8.6592 12.161 8.73048 12.2052 8.79837C12.2642 8.89342 12.3379 8.9647 12.4264 9.01222C12.5149 9.05974 12.6107 9.0835 12.7139 9.0835H12.7582C12.8909 9.0835 13.0088 9.04616 13.1121 8.97149C13.2153 8.89681 13.2816 8.80516 13.3111 8.69654C13.6208 8.27563 14.0447 7.87848 14.5829 7.50509C15.1211 7.1317 15.8915 6.94501 16.8942 6.94501C17.6462 6.94501 18.3134 7.06042 18.8959 7.29124C19.4783 7.52207 19.9723 7.85811 20.3778 8.29939C20.7833 8.74067 21.0892 9.28377 21.2957 9.92872C21.5021 10.5737 21.6053 11.3102 21.6053 12.1385V18.9002ZM5.59201 19.9796H0.991501C0.829303 19.9796 0.689225 19.9287 0.571263 19.8269C0.4533 19.725 0.39432 19.5995 0.39432 19.4501V6.70061C0.39432 6.55126 0.4533 6.42227 0.571263 6.31365C0.689225 6.20502 0.829303 6.15071 0.991501 6.15071H5.59201C5.75421 6.15071 5.89428 6.20502 6.01225 6.31365C6.13021 6.42227 6.18919 6.55126 6.18919 6.70061V19.4501C6.18919 19.5995 6.13021 19.725 6.01225 19.8269C5.89428 19.9287 5.75421 19.9796 5.59201 19.9796ZM5.01694 18.9002H1.58868V7.23014H5.01694V18.9002ZM1.86515 1.53768C2.24116 1.23218 2.73143 1.07943 3.33599 1.07943C3.9258 1.07943 4.39764 1.23218 4.75153 1.53768C5.10542 1.84318 5.28973 2.24711 5.30448 2.74949C5.30448 3.25187 5.12016 3.6558 4.75153 3.9613C4.3829 4.2668 3.89631 4.41955 3.29175 4.41955H3.26964C2.69457 4.41955 2.22273 4.26341 1.8541 3.95112C1.48546 3.63883 1.30115 3.23829 1.30115 2.74949C1.30115 2.24711 1.48915 1.84318 1.86515 1.53768Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+@import '../base';
+
+.statistic {
+
+  @include viewport-desktop {
+    padding: px-to-rem(40) 0 px-to-rem(150);
+  }
+  @include viewport-tablet {
+    padding: px-to-rem(40) 0 px-to-rem(100);
+  }
+  @include viewport-phone {
+    padding: px-to-rem(40) 0 px-to-rem(60);
+  }
+
+  > * + * {
+    margin-top: px-to-rem(46);
+  }
+  
+  //.statistic__wrapper 
+  &__wrapper {
+    @include viewport-tablet-min {
+      position: relative;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+
+      width: calc(100% + var(--wrap));
+
+      @media (min-width: 1551px) {
+        width: calc(100% + px-to-rem(164));
+      }
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(70);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(40);
+      }
+    }
+  }
+  
+  //.statistic__content 
+  &__content {
+    width: 100%;
+
+    @include  viewport-tablet-min {
+      max-width: px-to-rem(406);
+    }
+
+    > * + * {
+      @include viewport-desktop {
+        margin-top: px-to-rem(100);
+      }
+      @include viewport-tablet {
+        margin-top: px-to-rem(80);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(40);
+      }
+    }
+  }
+
+  //.statistic__action 
+  &__action {
+    @include viewport-phone {
+      @media (max-width: 380px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  
+  //.statistic__img 
+  &__img {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+
+    transform: translateZ(0);
+    background-color: var(--color-black);
+
+    @include viewport-phone {
+      @media (max-width: 550px) {
+        width: calc(100% + 2 * var(--wrap));
+        margin-left: calc(-1 * var(--wrap));
+      }
+    }
+
+    //.statistic__img__container 
+    &__container {
+      padding-top: 68.69%;
+
+      @include transition(transform 0.3s);
+
+      @at-root .statistic__img:hover & {
+        @include non-mobile-device {
+          transform: scale(1.1);
+        }
+      }
+      @at-root .statistic__img:focus-visible & {
+        @include non-mobile-device {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    img {
+      @include absolute-fullsize;
+      z-index: 0;
+      object-fit: cover;
+    }
+  }
+  
+  //.statistic-list 
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include viewport-tablet-min {
+      gap: px-to-rem(78) px-to-rem(38);
+    }
+
+    @include viewport-phone {
+      gap: px-to-rem(46) px-to-rem(28);
+    }
+
+    //.statistic-list__item 
+    &__item {
+      display: flex;
+
+      @include viewport-phone {
+        @media (max-width: 380px) {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      > * + * {
+        margin-left: px-to-rem(20);
+
+        @include viewport-phone {
+          @media (max-width: 380px) {
+            margin-left: unset;
+            margin-top: px-to-rem(10);
+          }
+        }
+      }
+    }
+    
+    //.statistic-list__img 
+    &__img {
+      flex-shrink: 0;
+      width: 100%;
+
+      @include viewport-tablet-min {
+        max-width: px-to-rem(52);
+      }
+      @include viewport-phone {
+        max-width: px-to-rem(42);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    //.statistic-list__content 
+    &__content {
+      > * + * {
+        margin-top: 0.25em;
+      }
+    }
+    
+    //.statistic-list__value 
+    &__value {
+      font-family: sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 100%;
+
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 2px;
+
+      @include viewport-tablet-min {
+        font-size: px-to-rem(48);
+      }
+      @include viewport-phone {
+        font-size: px-to-rem(42);
+      }
+    }
+    
+    //.statistic-list__name 
+    &__name {
+      font-weight: 400;
+      line-height: 100%;
+
+      @include viewport-tablet-min {
+        font-size: px-to-rem(24);
+      }
+      @include viewport-phone {
+        font-size: px-to-rem(22);
+      }
+    }
+  }
+}

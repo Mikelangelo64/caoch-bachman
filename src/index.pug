@@ -1,0 +1,26 @@
+doctype html
+html
+  include @/layout/head.pug
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/banner.pug
+
+    include @/templates/details.pug
+
+    include @/templates/statistic.pug
+
+    include @/templates/training.pug
+
+    include @/templates/benefits.pug
+
+    include @/templates/whois.pug
+
+    include @/templates/results.pug
+
+    include @/templates/complimentary.pug
+
+    include @/layout/footer.pug
+
+    script(src=require('./index.ts')) 

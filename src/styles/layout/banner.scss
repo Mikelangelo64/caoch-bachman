@@ -1,0 +1,238 @@
+@import '../base';
+
+.banner {
+  position: relative;
+  z-index: 0;
+
+  display: flex;
+  align-items: center;
+  min-height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+
+  color: var(--color-white);
+  background-color: var(--color-grey);
+
+  //clip-path: inset(0% 0% 0% 0% round 0 0 234px 0);
+  --banner-hide: 0%;
+  clip-path: inset(0% var(--banner-hide) var(--banner-hide) 0 round 0 0 30% 0);
+
+  //.banner__container 
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  //.banner__wrapper 
+  &__wrapper {
+    @include viewport-tablet-min {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(40);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(36);
+      }
+    }
+  }
+  
+  //.banner__content 
+  &__content {
+    width: 100%;
+    max-width: px-to-rem(500);
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(38);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(28);
+      }
+    }
+  }
+  
+  //.banner__main 
+  &__main {
+    > * + * {
+      margin-top: px-to-rem(12);
+    }
+  }
+  
+  //.banner__title 
+  &__title {
+    @include text-heading-1;
+  }
+  
+  //.banner__subtitle 
+  &__subtitle {
+    font-weight: 500;
+    line-height: 136%;
+
+    @include viewport-tablet-min {
+      font-size: px-to-rem(20);
+    }
+
+    @include viewport-phone {
+      font-size: px-to-rem(16);
+    }
+
+    span {
+      display: inline-block;
+      padding: px-to-rem(2) px-to-rem(6);
+      background-color: var(--color-black-100);
+    }
+  }
+  
+  //.banner-action 
+  &-action {
+    > * + * {
+      margin-top: px-to-rem(10);
+    }
+
+    //.banner-action__title 
+    &__title {
+      font-size: px-to-rem(12);
+      font-weight: 400;
+      line-height: 146%;
+    }
+    
+    //.banner-action__button 
+    &__button {
+      font-size: px-to-rem(16);
+    }
+  }
+  
+  //.banner-play 
+  &-play {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    @include viewport-desktop {
+      flex-shrink: 0;
+      max-width: px-to-rem(204);
+    }
+    
+    @include viewport-tablet {
+      flex-shrink: 0;
+      max-width: px-to-rem(180);
+    }
+    
+    @include viewport-phone {
+      max-width: px-to-rem(120);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+
+      .line-big,
+      .line-small,
+      .play {
+        @include transition(transform 0.6s);
+      }
+      
+      .line-big {
+        transform-origin: 50% 50%;
+      }
+      
+      .line-small {
+        transform-origin: 50% 51%;
+      }
+      
+      .play {
+        transform-origin: 50% 50%;
+      }
+
+      @at-root .banner-play:hover svg {
+        @include non-mobile-device {
+          .line-big {
+            transform: rotate(-280deg);
+          }
+
+          .line-small {
+            transform: rotate(130deg);
+          }
+          
+          .play {
+            transform: scale(1.4);
+          }
+        }
+      }
+
+      @at-root .banner-play:focus-visible svg {
+        @include non-mobile-device {
+          .line-big {
+            transform: rotate(-280deg);
+          }
+
+          .line-small {
+            transform: rotate(130deg);
+          }
+          
+          .play {
+            transform: scale(1.4);
+          }
+        }
+      }
+    }
+  }
+  
+  //.banner-bg 
+  &-bg {
+    @include absolute-fullsize;
+    z-index: 0;
+    overflow: hidden;
+
+    // /* stylelint-disable-next-line */
+    // -webkit-mask-image: url('../assets/img/banner-mask.png');
+    // mask-image: url('../assets/img/banner-mask.png');
+    // /* stylelint-disable-next-line */
+    // -webkit-mask-repeat: no-repeat;
+    // mask-repeat: no-repeat;
+    // /* stylelint-disable-next-line */
+    // -webkit-mask-size: 100% 100%;
+    // mask-size: 100% 100%;
+
+    &::after {
+      content: '';
+      display: block;
+      pointer-events: none;
+      @include absolute-fullsize;
+      z-index: 1;
+      @include transition(opacity 0.6s);
+
+      background-color: rgba(var(--color-black-100--rgb), 0.46);
+
+      @at-root .banner.active .banner-bg::after {
+        opacity: 0;
+      }
+    }
+    
+    //.banner-bg__media 
+    &__media {
+      @include absolute-fullsize;
+      z-index: 0;
+
+      video,
+      img {
+        @include absolute-fullsize;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      video {
+        &.unmuted {
+          z-index: -1;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

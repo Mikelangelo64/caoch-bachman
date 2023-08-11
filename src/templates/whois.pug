@@ -1,0 +1,36 @@
+-
+  const whoIsList = [
+    {
+      value: '10+',
+      name: 'Years of Coaching Experience'
+    },
+    {
+      value: '11',
+      name: 'Ground Breaking Onlline Programs'
+    },
+    {
+      value: '1000s',
+      name: 'of Happy Clients'
+    }
+  ];
+
+section.light.whois
+  ._container.whois__container
+    .whois__wrapper
+      .whois__content
+        h2.whois__title Who is <span>coach bachmann</span>
+
+        .whois__main
+          ul.whois-list
+            each item in whoIsList
+              li.whois-list__item
+                p.whois-list__value #{ item.value }
+                p.whois-list__description #{ item.name }
+
+          button.whois__button.button-dark.popup-open(
+            data-popup='_popup-thanks'
+          )
+            span learn to one arm handstand
+
+  .whois__bg
+    img(src=require('@/assets/img/whois.jpg'), alt='who-is')

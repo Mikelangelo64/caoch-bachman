@@ -1,0 +1,68 @@
+{
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+
+  "plugins": ["prettier"],
+
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+
+  "env": {
+    "browser": true
+  },
+
+  "ignorePatterns": ["**/animationCanvas/animation.js"],
+
+  "rules": {
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "tabWidth": 2,
+    //     "useTabs": false,
+    //     "singleQuote": true,
+    //     "endOfLine": "auto"
+    //   }
+    // ],
+    "quotes": ["error", "single"],
+    "import/no-unresolved": [2, { "ignore": ["@/*"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "no-underscore-dangle": [
+      "error",
+      { "allowAfterThis": true, "allowAfterSuper": true }
+    ],
+
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "selector": "typeAlias", "format": ["PascalCase"], "prefix": ["T"] },
+      { "selector": "interface", "format": ["PascalCase"], "prefix": ["I"] },
+      { "selector": "enum", "format": ["PascalCase"], "prefix": ["E"] },
+      {
+        "selector": ["variable", "function", "parameter"],
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": ["variable"],
+        "types": ["boolean"],
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+        "prefix": ["is", "IS", "Is", "has", "HAS", "Has", "can", "CAN", "Can"]
+      }
+    ]
+  }
+}

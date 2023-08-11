@@ -1,0 +1,38 @@
+footer.footer
+  .footer__header
+    .marquee.outlined.reversed.footer__marquee__outlined
+      span.marquee__item One goal
+      span.marquee__item One program
+      span.marquee__item One arm
+
+    .marquee.footer__marquee__filled
+      span.marquee__item One goal
+      span.marquee__item One program
+      span.marquee__item One arm
+
+  ._container
+    .footer__wrapper
+      a.logo-link.footer__logo(href='#') 
+        span.logo-link__img
+          img(src=require('@/assets/img/logo-footer.svg'), alt='logo')
+
+      .footer__content
+        each social, index in socialsArray
+          .socials.footer__socials
+            p.socials__title #{ social.title }
+
+            ul.socials__list
+              each item in social.list
+                li
+                  a.socials__item(
+                    href=`${item.link}`,
+                    target='_blank',
+                    rel='noreferrer'
+                  ) 
+                    img(src=require(`${item.image}`), alt=`${item.alt}`)
+
+  .footer__bottom
+    .marquee.outlined.reversed.footer__marquee__outlined
+      span.marquee__item One goal
+      span.marquee__item One program
+      span.marquee__item One arm

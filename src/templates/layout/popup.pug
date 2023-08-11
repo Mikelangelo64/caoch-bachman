@@ -1,0 +1,90 @@
+-
+  const popupList = [
+    { 
+      name: 'banner', 
+      type: 'video', 
+      video: '@/assets/video/banner.mp4',
+      title: '',
+      subtitle: ''
+    }, 
+    { 
+      name: 'about', 
+      type: 'common', 
+      video: '',
+      title: 'popup',
+      subtitle: 'popup'
+    },
+    { 
+      name: 'thanks', 
+      type: 'feedback', 
+      video: '',
+      title: 'Спасибо!',
+      subtitle: 'Ваша заявка принята.<br/>Ми свяжемся с вами в ближайшее время.',
+      button: 'Home'
+    },
+    { 
+      name: 'form', 
+      type: 'form', 
+      video: '',
+      title: '',
+      subtitle: '',
+      button: ''
+    }
+  ];
+
+each item in popupList
+  div(
+    class=`popup popup-${item.type} ${item.name}__popup`,
+    data-popupname=`_popup-${item.name}`,
+    aria-modal='true',
+    role='dialog'
+  )
+    .popup__overlay
+
+    .popup__scroll
+      .popup__wrapper
+        button.popup__close
+          img(src=require('@/assets/img/popup-close.svg'), alt='close')
+
+        .popup__content
+          case item.type 
+            when 'video'
+              .popup-video__media
+                video.video(
+                  disablePictureInPicture,
+                  preload='metadata',
+                  playsinline,
+                  controls
+                ) 
+                  source(src=require(`${item.video}`), type='video/mp4')
+
+            when 'feedback'
+              if item.title
+                .popup__title__container
+                  .popup-feedback__label
+                    img(
+                      src=require('@/assets/img/popup-thanks.svg'),
+                      alt='thank you'
+                    )
+                  p.popup__title #{ item.title }
+
+              if item.subtitle
+                p.popup__subtitle!= item.subtitle
+
+              if item.button
+                button.popup__button.button-light
+                  span #{ item.button }
+
+            when 'form'
+              include @/templates/form-popup.pug
+
+            default
+              if item.title
+                p.popup__title #{ item.title }
+
+              if item.subtitle
+                p.popup__subtitle #{ item.subtitle }
+
+              if item.button
+                button.popup__button.button-light
+                  span #{ item.button }

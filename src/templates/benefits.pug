@@ -1,0 +1,35 @@
+-
+  const benefitsList = [
+    {
+      image: '@/assets/img/benefits/benefits-1.svg',
+      title: 'Train <br/>anywhere'
+    },
+    {
+      image: '@/assets/img/benefits/benefits-2.svg',
+      title: '45-180 min self <br/>paced workouts'
+    },
+    {
+      image: '@/assets/img/benefits/benefits-3.svg',
+      title: 'Follow alone <br/>classes'
+    }
+  ];
+
+section.dark.benefits
+  .marquee.outlined.benefits__marquee__top
+    span.marquee__item One goal
+    span.marquee__item One program
+    span.marquee__item One arm
+
+  ._container.benefits__container
+    .benefits__wrapper
+      each item, index in benefitsList 
+        .benefits__item
+          .benefits__label
+            img(src=require(`${item.image}`), alt=`benefits-${index + 1}`)
+
+          p.benefits__title!= item.title
+
+  .marquee.outlined.reversed.benefits__marquee__bottom
+    span.marquee__item One goal
+    span.marquee__item One program
+    span.marquee__item One arm

@@ -1,0 +1,235 @@
+@import '../base';
+
+.whois {
+  position: relative;
+  z-index: 0;
+  padding: 0;
+
+  //.whois__bg 
+  &__bg {
+    @include viewport-tablet-min {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+  
+      //max-width: px-to-rem(1012);
+      max-width: calc(100vw - #{px-to-rem(578)});
+      
+      @media (min-width: 1610px) {
+        max-width: calc(100vw - #{px-to-rem(972)});
+      }
+
+      @media (min-width: 2060px) {
+        max-width: calc(100vw - #{px-to-rem(1214)});
+      }
+    }
+
+    @include viewport-phone {
+      position: relative;
+      z-index: 0;
+      display: flex;
+      max-width: 50%;
+      width: 100%;
+      
+      margin-top: px-to-rem(-336);
+      
+      @media (max-width:550px) {
+        display: none;
+        max-width: unset;
+        margin-top: 0;
+      }
+    }
+
+    &::after {
+      @include viewport-phone {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: px-to-rem(100);
+        background-image: linear-gradient(180deg, var(--color-grey) 0%, var(--color-grey) 30%, rgba(var(--color-grey--rgb), 0) 100%);
+      }
+    }
+
+    img {
+      @include viewport-tablet-min {
+        @include  absolute-fullsize;
+        z-index: 0;
+        object-fit: cover;
+
+        @media (min-width: 1441px) {
+          object-position: 50% 22%;
+        }
+      }
+      
+      @include viewport-phone {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  
+  //.whois__container 
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  //.whois__wrapper 
+  &__wrapper {
+    position: relative;
+    z-index: 0;
+    max-width: px-to-rem((578));
+    margin-left: auto;
+    margin-right: 0;
+
+    @include viewport-desktop {
+      padding: px-to-rem(150) 0;
+    }
+
+    @include viewport-tablet {
+      padding: px-to-rem(100) 0;
+    }
+
+    @include viewport-phone {
+      padding: px-to-rem(60) 0 0;
+
+      @media (max-width: 550px) {
+        padding: px-to-rem(60) 0;
+      }
+    }
+
+    &::before {
+      @include viewport-tablet-min {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: px-to-rem(0);
+        top: 0;
+  
+        width: calc(100% + var(--wrap));
+        height: 100%;
+  
+        background-color: var(--color-grey);
+      }
+    }
+
+    &::after {
+      @include viewport-tablet-min {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        height: 100%;
+        left: px-to-rem(-100);
+        width: px-to-rem(140);
+        background-image: linear-gradient(270deg, var(--color-grey) 0%, var(--color-grey) 30%, rgba(var(--color-grey--rgb), 0) 100%);
+      }
+    }
+  }
+  
+  //.whois__content 
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    @include viewport-phone {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+
+      @media (max-width: 550px) {
+        display: block;
+        text-align: left;
+      }
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(68);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(56);
+      }
+    }
+  }
+  
+  //.whois__title 
+  &__title {
+    @include text-heading-2;
+  }
+
+  //.whois__main 
+  &__main {
+    @include viewport-tablet-min {
+      margin-left: px-to-rem(36);
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(70);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(56);
+      }
+    }
+  }
+  
+  //.whois-list 
+  &-list {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(54);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(42);
+      }
+    }
+
+    //.whois-list__item 
+    &__item {
+      display: flex;
+      align-items: center;
+
+      > * + * {
+        margin-left: px-to-rem(12);
+      }
+    }
+    
+    //.whois-list__value 
+    &__value {
+      font-weight: 800;
+      line-height: 146%;
+      text-transform: uppercase;
+
+      @include viewport-tablet-min {
+        font-size: px-to-rem(52);
+      }
+      @include viewport-phone {
+        font-size: px-to-rem(46);
+      }
+    }
+    
+    //.whois-list__description 
+    &__description {
+      line-height: 140%;
+      font-weight: 500;
+      
+      @include viewport-tablet-min {
+        font-size: px-to-rem(24);
+      }
+      @include viewport-phone {
+        font-size: px-to-rem(22);
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+-
+  const detailsList = [
+    {
+      title: 'Customized workouts',
+      description: 'From warm up, through prehab, technical training and conditioning. Everything is customized towards your current level and needs.'
+    },
+    {
+      title: 'Flexibility workouts',
+      description: 'Improve your specific flexibility in order to take you to your handstand goals on the fast lane.'
+    },
+    {
+      title: 'Precise technique',
+      description: 'In depth instructions to every single drill will assure that you have everything you need to perfect your execution.'
+    },
+    {
+      title: 'antagonist training',
+      description: 'In order to stay healthy and well balanced you also have to work your pulling muscles with or without equipment.'
+    }
+  ];
+
+section.light.details
+  ._container
+    .details__wrapper
+      .details__content
+        h2.details__title Programm details
+
+        ul.details-list
+          each item in detailsList
+            li.details-list__item
+              h3.details-list__title #{ item.title }
+              p.details-list__description #{ item.description }
+
+      .details__img
+        .details__img__container
+          img(src=require('@/assets/img/details.png'), alt='details')

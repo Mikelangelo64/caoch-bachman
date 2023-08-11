@@ -1,0 +1,45 @@
+-
+  const resultsList = [
+    {
+      image: '@/assets/img/results/results-1.jpg',
+      name: 'Martin К.'
+    },
+    {
+      image: '@/assets/img/results/results-2.jpg',
+      name: 'Martin К.'
+    }
+  ];
+
+section.dark.results
+  .marquee.outlined.results__marquee__top
+    span.marquee__item One goal
+    span.marquee__item One program
+    span.marquee__item One arm
+
+  ._container.results__container
+    .results__wrapper
+      .results__content
+        h2.results__title Results of my clients
+
+        .results-slider-controls
+          button.results-slider-prev.swiper-button-prev
+            img(src=require('@/assets/img/arrow-left.svg'), alt='previous')
+
+          button.results-slider-next
+            img(src=require('@/assets/img/arrow-right.svg'), alt='next')
+
+      .results-slider.swiper
+        .swiper-wrapper
+          - for (let i=0; i < 2; i++)
+            each item, index in resultsList
+              .swiper-slide
+                .results-slider__item
+                  .results-slider__img
+                    .results-slider__img__container
+                      img.results-slider__img__content(
+                        src=require(`${item.image}`),
+                        alt=`results-${i + index + 1}`,
+                        loading='lazy'
+                      )
+
+                  .results-slider__title #{ item.name }

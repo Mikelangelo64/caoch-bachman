@@ -1,0 +1,56 @@
+-
+  const statisticList = [
+    {
+      image: '@/assets/img/statistic/statistic-1.svg',
+      value: '16',
+      name: 'weeks'
+    },
+    {
+      image: '@/assets/img/statistic/statistic-2.svg',
+      value: '4',
+      name: 'stages'
+    },
+    {
+      image: '@/assets/img/statistic/statistic-3.svg',
+      value: '75',
+      name: 'workouts'
+    },
+    {
+      image: '@/assets/img/statistic/statistic-4.svg',
+      value: '€150',
+      name: 'price'
+    }
+  ];
+
+section.dark.statistic
+  .marquee.outlined.reversed
+    span.marquee__item One goal
+    span.marquee__item One program
+    span.marquee__item One arm
+
+  ._container
+    .statistic__wrapper
+      .statistic__content
+        ul.statistic-list
+          each item, index in statisticList
+            li.statistic-list__item
+              .statistic-list__img
+                img(src=require(`${item.image}`), alt=`statistic-${index + 1}`)
+
+              .statistic-list__content
+                p.statistic-list__value #{ item.value }
+                p.statistic-list__name #{ item.name }
+
+        .statistic__action
+          button.statistic__button.button-light.popup-open(
+            data-popup='_popup-thanks'
+          )
+            span learn to one arm handstand
+
+      .statistic__img
+        .statistic__img__container
+          img.statistic__img__content(
+            src=require('@/assets/img/statistic/statistic.jpg'),
+            alt='statistic',
+            loading='lazy'
+          )

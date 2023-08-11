@@ -1,0 +1,56 @@
+-
+  const socialsArray = [
+    {
+      title: 'contact me',
+      list: [
+        {
+          image: '@/assets/img/socials/watsapp.svg',
+          alt: 'watsapp',
+          link: '#'
+        }
+      ]
+    },
+    {
+      title: 'follow me',
+      list: [
+        {
+          image: '@/assets/img/socials/youtube.svg',
+          alt: 'youtube',
+          link: '#'
+        },
+        {
+          image: '@/assets/img/socials/instagram.svg',
+          alt: 'instagram',
+          link: '#'
+        }
+      ]
+    }
+  ];
+
+header.header
+  ._container
+    .header__wrapper
+      .header__item
+        a.logo-link.header__logo(href='#') 
+          span.logo-link__img
+            img(src=require('@/assets/img/logo.svg'), alt='logo')
+
+          span.logo-link__list
+            span.logo-link__item Handstands
+            span.logo-link__item Flexibility
+            span.logo-link__item Calisthenics
+
+      .header__item
+        .socials.header__socials
+          p.socials__title #{ socialsArray[0].title }
+          ul.socials__list
+            each item in socialsArray[0].list
+              li
+                a.socials__item(
+                  href=`${item.link}`,
+                  target='_blank',
+                  rel='noreferrer'
+                ) 
+                  img(src=require(`${item.image}`), alt=`${item.alt}`)
+
+  include @/layout/popup.pug

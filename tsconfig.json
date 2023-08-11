@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["ESNext", "DOM"],
+    "sourceMap": false,
+    "outDir": "./public",
+    "strict": true,
+    "moduleResolution": "Node",
+    "typeRoots": ["node_modules/@types", "src/typings.d.ts"],
+    "esModuleInterop": true,
+
+    "allowJs": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@/styles/*": ["./src/styles/*"],
+      "@/scripts/*": ["./src/scripts/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/templates/*": ["./src/templates/*"],
+      "@/layout/*": ["./src/templates/layout/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}

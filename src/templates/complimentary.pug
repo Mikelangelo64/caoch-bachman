@@ -1,0 +1,45 @@
+-
+  const complimentaryList = [
+    {
+      image: '@/assets/img/complimentary/complimentary-1.svg',
+      title: 'Knowledge base',
+      description: 'In the exclusive knowledge base you will lean everything there is to know about technique, training, the do’s and do not’s.'
+    },
+    {
+      image: '@/assets/img/complimentary/complimentary-2.svg',
+      title: 'Technique school',
+      description: 'Receive in depth technical break down and analysis of the most important exercises and their common mistakes and how these will help you on you journey towards the one arm handstand'
+    },
+    {
+      image: '@/assets/img/complimentary/complimentary-3.svg',
+      title: 'Membership perks',
+      description: 'Become a pert og inner circle, get added to the private Chat to ask questions and connect with like minded athletes.'
+    }
+  ];
+
+section.light.complimentary
+  ._container
+    .complimentary__wrapper
+      .complimentary__header
+        h2.complimentary__title Complimentary content
+        p.complimentary__description Every Handstand Labs athlete receive full complimentary access to:
+
+      ul.complimentary-list
+        each item, index in complimentaryList
+          li.complimentary-list__item
+            .complimentary-list__header
+              .complimentary-list__label
+                img(
+                  src=require(`${item.image}`),
+                  alt=`complimentary-${index + 1}`
+                )
+
+              h3.complimentary-list__title #{ item.title }
+
+            p.complimentary-list__description #{ item.description }
+
+      .complimentary__bottom
+        button.complimentary__button.button-dark.popup-open(
+          data-popup='_popup-thanks'
+        )
+          span learn to one arm handstand

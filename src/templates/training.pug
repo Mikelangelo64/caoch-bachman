@@ -1,0 +1,40 @@
+-
+  const trainingList = [
+    {
+      name: 'General Warm Up'
+    },
+    {
+      name: 'Pre Hab & injury Prevention'
+    },
+    {
+      name: 'Base Technique Refinement'
+    },
+    {
+      name: 'Technical training'
+    },
+    {
+      name: 'Conditioning'
+    },
+    {
+      name: 'Post Workout Cool Down'
+    }
+  ];
+
+section.light.training
+  ._container.training__container
+    .training__wrapper
+      .training__content
+        h2.training__title How you will be training
+
+        p.training__description Every workout consists of:
+
+        ul.training-list
+          each item in trainingList
+            li.training-list__item
+              span #{ item.name }
+
+  .training__bg
+    img.training__bg__img(
+      src=require('@/assets/img/training.jpg'),
+      alt='training'
+    )
