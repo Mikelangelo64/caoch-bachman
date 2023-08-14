@@ -1,15 +1,15 @@
 section.banner(data-animate='clip-path')
   .banner-bg
     .banner-bg__media
-      video(
+      video.video(
         disablePictureInPicture,
-        preload='auto',
+        preload='metadata',
         playsinline,
         loop,
         muted,
         autoplay
       ) 
-        source(src=require('@/assets/video/banner.mp4'), type='video/mp4')
+        source(data-src=require('@/assets/video/banner.mp4'), type='video/mp4')
 
   ._container.banner__container
     .banner__wrapper

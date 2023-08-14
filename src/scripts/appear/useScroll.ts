@@ -1,18 +1,6 @@
 import clearScrollListener from '../config/clearScrollListener';
 import debounce from '../config/debounce';
-import { IUppearElement } from './init';
-
-export type TScrollCallback = (props: {
-  progress: number;
-  hidden: IUppearElement;
-  shown: IUppearElement;
-}) => void;
-
-interface IUseScrollEventProps {
-  target: HTMLElement | null;
-  callback?: TScrollCallback;
-  isImmediate?: boolean;
-}
+import { IUppearElement, IUseScrollEventProps } from './types';
 
 const useScrollEvent: (props: IUseScrollEventProps) => {
   hidden: IUppearElement | undefined;

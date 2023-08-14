@@ -14,8 +14,15 @@
 
   //clip-path: inset(0% 0% 0% 0% round 0 0 234px 0);
   --banner-hide: 0%;
-  clip-path: inset(0% var(--banner-hide) var(--banner-hide) 0 round 0 0 30% 0);
   will-change: clip-path;
+
+  @include viewport-tablet-min {
+    clip-path: inset(0% var(--banner-hide) var(--banner-hide) 0 round 0 0 30% 0);
+  }
+
+  @include viewport-phone {
+    clip-path: inset(0% var(--banner-hide) var(--banner-hide) 0 round 0 0 16% 0);
+  }
 
   //.banner__container 
   &__container {
@@ -232,6 +239,13 @@
         &.unmuted {
           z-index: -1;
           opacity: 0;
+        }
+
+        @include transition(opacity 0.6s);
+        opacity: 0;
+
+        &.loaded {
+          opacity: 1;
         }
       }
     }

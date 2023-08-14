@@ -56,7 +56,7 @@ each item in popupList
                   playsinline,
                   controls
                 ) 
-                  source(src=require(`${item.video}`), type='video/mp4')
+                  source(data-src=require(`${item.video}`), type='video/mp4')
 
             when 'feedback'
               if item.title
