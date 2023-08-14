@@ -15,6 +15,7 @@
   //clip-path: inset(0% 0% 0% 0% round 0 0 234px 0);
   --banner-hide: 0%;
   clip-path: inset(0% var(--banner-hide) var(--banner-hide) 0 round 0 0 30% 0);
+  will-change: clip-path;
 
   //.banner__container 
   &__container {

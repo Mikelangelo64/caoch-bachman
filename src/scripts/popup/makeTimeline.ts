@@ -15,7 +15,7 @@ const renderModalAnimation = ({
   parent,
   overlay,
   scroll,
-  additional,
+  additional
 }: IRenderModalAnimationProps) => {
   if (parent) {
     const element = parent;
@@ -54,7 +54,7 @@ const makeTimeline = (
   scroll: HTMLElement | null,
   overlay: HTMLElement | null,
   additional: HTMLElement | null,
-  video?: HTMLVideoElement | null,
+  video?: HTMLVideoElement | null
 ) => {
   if (!parent || !scroll || !overlay) {
     return undefined;
@@ -62,7 +62,7 @@ const makeTimeline = (
 
   const timeline = new Timeline({
     duration: 600,
-    easing: [0.25, 0.1, 0.25, 1],
+    easing: [0.25, 0.1, 0.25, 1]
   });
   timeline.addCallback('start', () => {
     if (!timeline.isReversed) {
@@ -83,7 +83,7 @@ const makeTimeline = (
       overlay,
       progress,
       easing,
-      additional,
+      additional
     });
   });
 

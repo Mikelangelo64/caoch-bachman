@@ -21,13 +21,19 @@
 
 html,
 body {
-  overflow-x: hidden;
+  //overflow-x: hidden;
   line-height: 116%;
 
-  &.lock,
+  &.lock{
+    overflow: hidden;
+  }
+}
+
+html {
   &:not(.v-loaded) {
     overflow: hidden;
   }
+
 }
 
 p,
@@ -325,3 +331,4 @@ section {
 @import './layout/whois';
 @import './layout/results';
 @import './layout/complimentary';
+@import './layout/appear';

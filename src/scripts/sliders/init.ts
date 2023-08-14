@@ -10,7 +10,7 @@ const slidersInit = () => {
   const sliders: Array<IInitializedSlider> = [];
 
   const resultsArray = document.querySelectorAll(
-    '.results',
+    '.results'
   ) as NodeListOf<HTMLElement>;
 
   if (resultsArray.length === 0) {
@@ -27,15 +27,15 @@ const slidersInit = () => {
 
         breakpoints: {
           660: {
-            slidesPerView: 2,
+            slidesPerView: 2
           },
 
           899: {
             slidesPerView: 'auto',
-            spaceBetween: 54,
-          },
-        },
-      },
+            spaceBetween: 54
+          }
+        }
+      }
     });
 
     sliders.push({ name: 'results', slider });

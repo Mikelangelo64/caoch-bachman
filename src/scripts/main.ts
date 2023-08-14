@@ -1,3 +1,4 @@
+import appearInit from './appear/init';
 import marqueeInit from './marquee/init';
 import moveHoverImageInit from './moveHoverImage/init';
 import paralaxInit from './parallax/init';
@@ -14,6 +15,8 @@ export const init = () => {
   moveHoverImageInit('statistic__img', 'statistic__img__content');
 
   paralaxInit();
+
+  appearInit();
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;
@@ -49,7 +52,7 @@ export const init = () => {
         const inputs = Array.from(
           form.querySelectorAll('input, textarea') as NodeListOf<
             HTMLInputElement | HTMLTextAreaElement
-          >,
+          >
         );
 
         popups.forEach(({ timeline, isThanks, isError }) => {

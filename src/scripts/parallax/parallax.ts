@@ -5,15 +5,11 @@ interface IProgress {
   target: number;
 }
 
-export const clearListener = (listener: () => void) => {
-  window.removeEventListener('scroll', listener);
-};
-
 const parallaxItem = (itemProps: HTMLElement, section: HTMLElement) => {
   const item = itemProps;
   const progress: IProgress = {
     current: 0,
-    target: 0,
+    target: 0
   };
 
   const { size } = item.dataset;
@@ -37,6 +33,10 @@ const parallaxItem = (itemProps: HTMLElement, section: HTMLElement) => {
   const render = () => {
     progress.current = utils.math.lerp(progress.current, progress.target, mass);
     item.style.transform = `translate(0, ${progress.current}px)`;
+
+    if (progress.target === progress.current && frame.isPlaying) {
+      frame.pause();
+    }
   };
 
   frame.addCallback('frame', () => {
@@ -51,6 +51,10 @@ const parallaxItem = (itemProps: HTMLElement, section: HTMLElement) => {
     const y = Math.min(startY, rect.height);
 
     progress.target = (-60 * y) / rect.height;
+
+    if (progress.target !== progress.current && !frame.isPlaying) {
+      frame.play();
+    }
   };
 
   const listener = () => {

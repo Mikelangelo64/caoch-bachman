@@ -1,0 +1,32 @@
+@import '../base';
+
+.appear {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  min-height: calc(var(--vh, 1vh) * 200);
+
+  //.appear__wrapper
+  &__wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+  
+  //.appear-hidden
+  &-hidden {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  //.appear-shown
+  &-shown {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+  }
+}

@@ -5,9 +5,13 @@ html
   body
     include @/layout/header.pug
 
-    include @/templates/banner.pug
+    .appear
+      .appear__wrapper
+        .appear-hidden
+          include @/templates/banner.pug
 
-    include @/templates/details.pug
+        .appear-shown
+          include @/templates/details.pug
 
     include @/templates/statistic.pug
 

@@ -2,7 +2,7 @@ import nodeMarquee from 'node-marquee';
 
 const marqueeInit = () => {
   const list = document.querySelectorAll(
-    '.marquee',
+    '.marquee'
   ) as NodeListOf<HTMLDivElement>;
 
   if (list.length === 0) {
@@ -14,7 +14,7 @@ const marqueeInit = () => {
       parent: item,
       resize: 'w',
       prependWhitespace: false,
-      speed: item.classList.contains('reversed') ? -1 : 1,
+      speed: item.classList.contains('reversed') ? -1 : 1
     });
   });
 };

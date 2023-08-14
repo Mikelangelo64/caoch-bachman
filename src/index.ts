@@ -10,7 +10,7 @@ import vevet from './scripts/config/vevet';
 // eslint-disable-next-line no-new
 new Preloader({
   container: '#v-preloader',
-  hide: 300,
+  hide: 300
 });
 
 vevet.pageLoad.onLoaded(() => {

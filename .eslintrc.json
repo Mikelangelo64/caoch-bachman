@@ -1,36 +1,38 @@
 {
+  "env": {
+    "browser": true,
+    "es6": true
+  },
   "extends": [
-    "airbnb-base",
+    "airbnb-base/legacy",
     "airbnb-typescript/base",
+    "plugin:import/typescript",
     "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
 
-  "plugins": ["prettier"],
+  "parser": "@typescript-eslint/parser",
 
   "parserOptions": {
-    "project": "./tsconfig.eslint.json"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
 
-  "env": {
-    "browser": true
-  },
-
-  "ignorePatterns": ["**/animationCanvas/animation.js"],
+  "plugins": ["@typescript-eslint", "prettier"],
 
   "rules": {
-    // "prettier/prettier": [
-    //   "error",
-    //   {
-    //     "tabWidth": 2,
-    //     "useTabs": false,
-    //     "singleQuote": true,
-    //     "endOfLine": "auto"
-    //   }
-    // ],
-    "quotes": ["error", "single"],
-    "import/no-unresolved": [2, { "ignore": ["@/*"] }],
+    "import/prefer-default-export": 0,
+    "no-underscore-dangle": [
+      "error",
+      { "allowAfterThis": true, "allowAfterSuper": true }
+    ],
+    "promise/always-return": 0,
+    //"comma-dangle": ["error", "never"],
+
+    "import/no-absolute-path": 0,
+    "import/no-unresolved": [2, { "ignore": ["@/*", "swiper/*"] }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -41,11 +43,6 @@
         "ts": "never",
         "tsx": "never"
       }
-    ],
-    "import/prefer-default-export": 0,
-    "no-underscore-dangle": [
-      "error",
-      { "allowAfterThis": true, "allowAfterSuper": true }
     ],
 
     "@typescript-eslint/naming-convention": [
@@ -64,5 +61,7 @@
         "prefix": ["is", "IS", "Is", "has", "HAS", "Has", "can", "CAN", "Can"]
       }
     ]
-  }
+  },
+
+  "ignorePatterns": ["**/public/*", "webpack.config.js"]
 }

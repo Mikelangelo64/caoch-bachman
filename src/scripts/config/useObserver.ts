@@ -13,7 +13,7 @@ const useObserver: (
   target,
   callbackIn,
   callbackOut,
-  isCallOnce = false,
+  isCallOnce = false
 }) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(
@@ -40,7 +40,7 @@ const useObserver: (
       {
         root: null,
         threshold: 0,
-        rootMargin: '0px 0px 0px 0px',
+        rootMargin: '0px 0px 0px 0px'
       }
     );
   });

@@ -1,7 +1,8 @@
 import { AnimationFrame } from 'vevet';
 import useObserver from '../config/useObserver';
-import parallaxItem, { clearListener } from './parallax';
+import parallaxItem from './parallax';
 import vevet from '../config/vevet';
+import clearScrollListener from '../config/clearScrollListener';
 
 const paralaxInit = () => {
   if (vevet.isMobile) {
@@ -9,7 +10,7 @@ const paralaxInit = () => {
   }
 
   const sectionArray = Array.from(
-    document.querySelectorAll('.statistic') as NodeListOf<HTMLElement>,
+    document.querySelectorAll('.statistic') as NodeListOf<HTMLElement>
   );
 
   if (sectionArray.length === 0) {
@@ -18,7 +19,7 @@ const paralaxInit = () => {
 
   sectionArray.forEach((section) => {
     const itemArray = Array.from(
-      section.querySelectorAll('.statistic__img') as NodeListOf<HTMLElement>,
+      section.querySelectorAll('.statistic__img') as NodeListOf<HTMLElement>
     );
 
     if (itemArray.length === 0) {
@@ -51,7 +52,7 @@ const paralaxInit = () => {
         });
 
         listenerArray.forEach((listener) => {
-          clearListener(listener);
+          clearScrollListener(listener);
         });
 
         frameArray.forEach((frame) => {
@@ -60,7 +61,7 @@ const paralaxInit = () => {
 
         listenerArray = [];
         frameArray = [];
-      },
+      }
     });
   });
 };

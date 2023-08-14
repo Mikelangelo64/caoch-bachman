@@ -7,7 +7,7 @@ const moveHoverImageInit = (containerClass: string, labelClass: string) => {
   }
 
   const containerArray = document.querySelectorAll(
-    `.${containerClass}`,
+    `.${containerClass}`
   ) as NodeListOf<HTMLElement>;
 
   if (containerArray.length === 0) {
@@ -16,7 +16,7 @@ const moveHoverImageInit = (containerClass: string, labelClass: string) => {
 
   containerArray.forEach((container) => {
     const label = container.querySelector(
-      `.${labelClass}`,
+      `.${labelClass}`
     ) as HTMLElement | null;
 
     if (!label) {
@@ -25,11 +25,11 @@ const moveHoverImageInit = (containerClass: string, labelClass: string) => {
 
     const progressX = {
       current: 0,
-      target: 0,
+      target: 0
     };
     const progressY = {
       current: 0,
-      target: 0,
+      target: 0
     };
 
     const frame = new AnimationFrame();
@@ -37,13 +37,13 @@ const moveHoverImageInit = (containerClass: string, labelClass: string) => {
       progressX.current = utils.math.lerp(
         progressX.current,
         progressX.target,
-        0.1,
+        0.1
       );
 
       progressY.current = utils.math.lerp(
         progressY.current,
         progressY.target,
-        0.1,
+        0.1
       );
 
       label.style.transform = `translate(${progressX.current * 30}px, ${
