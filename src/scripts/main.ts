@@ -1,8 +1,8 @@
 import appearInit from './appear/init';
 import vevet from './config/vevet';
-import marqueeInit from './marquee/init';
+import marqueeInit, { marqueeRotate } from './marquee/init';
 import moveHoverImageInit from './moveHoverImage/init';
-import paralaxInit from './parallax/init';
+// import paralaxInit from './parallax/init';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
@@ -15,12 +15,12 @@ export const init = () => {
   moveHoverImageInit('results-slider__img', 'results-slider__img__content');
   moveHoverImageInit('statistic__img', 'statistic__img__content');
 
-  paralaxInit();
+  // paralaxInit();
 
   appearInit();
 
   if (!vevet.isMobile) {
-    // marqueeRotate();
+    marqueeRotate();
   }
 
   // const header = document.querySelector('.header') as HTMLElement;
