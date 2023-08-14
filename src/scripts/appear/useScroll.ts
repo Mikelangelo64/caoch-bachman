@@ -41,7 +41,7 @@ const useScrollEvent: (props: IUseScrollEventProps) => {
 
   let isFirstTime = true;
 
-  container.style.minHeight = `${hidden.height * 2 + shown.height}px`;
+  container.style.minHeight = `${hidden.height * 1.5 + shown.height}px`;
 
   const listener = () => {
     const rect = container.getBoundingClientRect();

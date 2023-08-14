@@ -19,4 +19,18 @@ const marqueeInit = () => {
   });
 };
 
+export const marqueeRotate = () => {
+  const sectionArray = document.querySelectorAll(
+    'section.dark'
+  ) as NodeListOf<HTMLElement>;
+
+  if (sectionArray.length === 0) {
+    return;
+  }
+
+  sectionArray.forEach((section) => {
+    console.log(section);
+  });
+};
+
 export default marqueeInit;

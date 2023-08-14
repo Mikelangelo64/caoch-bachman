@@ -1,8 +1,9 @@
-export type TAppearAnimation = 'opacity' | 'clip-path';
+export type TAppearAnimation = 'opacity' | 'clip-path' | 'translateY' | 'split';
 
 export type TRender = (props: {
   progress: number;
   itemDom: HTMLElement;
+  additionalItemDom?: HTMLElement;
 }) => void;
 
 export type TScrollCallback = (props: {

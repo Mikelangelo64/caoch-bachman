@@ -1,11 +1,11 @@
 doctype html
-html
+html(lang='en')
   include @/layout/head.pug
 
   body
     include @/layout/header.pug
 
-    .appear
+    .appear(data-include-mobile='include')
       .appear__wrapper
         .appear-hidden
           include @/templates/banner.pug
@@ -13,18 +13,31 @@ html
         .appear-shown
           include @/templates/details.pug
 
-    include @/templates/statistic.pug
+    .appear
+      .appear__wrapper
+        .appear-hidden
+          include @/templates/statistic.pug
 
-    include @/templates/training.pug
+        .appear-shown
+          include @/templates/training.pug
 
     include @/templates/benefits.pug
 
-    include @/templates/whois.pug
+    .appear.special
+      .appear__wrapper
+        .appear-hidden
+          include @/templates/whois.pug
 
-    include @/templates/results.pug
+        .appear-shown
+          include @/templates/results.pug
 
-    include @/templates/complimentary.pug
+    .appear
+      .appear__wrapper
+        .appear-hidden
+          include @/templates/complimentary.pug
 
-    include @/layout/footer.pug
+        .appear-shown
+          include @/layout/footer.pug
 
+    script(src=require('@/scripts/video.ts')) 
     script(src=require('./index.ts')) 

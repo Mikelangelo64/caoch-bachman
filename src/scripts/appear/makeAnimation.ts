@@ -46,7 +46,7 @@ const makeAppearAnimation: (props: IMakeAppearAnimation) => void = ({
     progressAnimation.current = utils.math.lerp(
       progressAnimation.current,
       progressAnimation.target,
-      0.1
+      0.4
     );
     // console.log(progressAnimation.current, progressAnimation.target);
 
@@ -58,11 +58,12 @@ const makeAppearAnimation: (props: IMakeAppearAnimation) => void = ({
     } else {
       renderFunc({
         progress: progressAnimation.current,
-        itemDom: animateElement || hidden.dom
+        itemDom: animateElement || hidden.dom,
+        additionalItemDom: shown.dom
       });
     }
 
-    if (progressAnimation.current === 1) {
+    if (progressAnimation.current > 0.7) {
       hidden.dom.style.pointerEvents = 'none';
     } else {
       hidden.dom.style.pointerEvents = 'auto';

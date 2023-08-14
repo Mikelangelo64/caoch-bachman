@@ -1,4 +1,5 @@
 import appearInit from './appear/init';
+import vevet from './config/vevet';
 import marqueeInit from './marquee/init';
 import moveHoverImageInit from './moveHoverImage/init';
 import paralaxInit from './parallax/init';
@@ -17,6 +18,10 @@ export const init = () => {
   paralaxInit();
 
   appearInit();
+
+  if (!vevet.isMobile) {
+    // marqueeRotate();
+  }
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;

@@ -24,8 +24,8 @@ const renderModalAnimation = ({
   }
 
   if (overlay) {
-    const element = overlay;
-    element.style.opacity = `${easing}`;
+    // const element = overlay;
+    // element.style.opacity = `${easing}`;
   }
 
   if (scroll) {
