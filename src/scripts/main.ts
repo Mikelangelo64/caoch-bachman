@@ -12,8 +12,19 @@ export const init = () => {
   marqueeInit();
   slidersInit();
 
-  moveHoverImageInit('results-slider__img', 'results-slider__img__content');
-  moveHoverImageInit('statistic__img', 'statistic__img__content');
+  moveHoverImageInit({
+    containerClass: 'results-slider__img',
+    labelClass: 'results-slider__img__content'
+  });
+  moveHoverImageInit({
+    containerClass: 'statistic__img',
+    labelClass: 'statistic__img__content'
+  });
+  moveHoverImageInit({
+    containerClass: 'details',
+    labelClass: 'details__img__content',
+    isReverse: true
+  });
 
   // paralaxInit();
 

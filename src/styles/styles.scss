@@ -139,6 +139,8 @@ ol {
 }
 
 section {
+  overflow-x: hidden;
+
   &.light {
     color: var(--color-black);
     background-color: var(--color-grey);

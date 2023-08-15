@@ -5,10 +5,6 @@
   z-index: 0;
   width: 100%;
   min-height: calc(var(--vh, 1vh) * 200);
-
-  &.special {
-    //background-color: var(--color-black-100);
-  }
   
   &[data-include-mobile="include"] {
     @include mobile-device {
@@ -44,12 +40,12 @@
       }
     }
 
-    @at-root .appear.special & {
-      //position: relative;
-      top: unset;
-      bottom: 0;
-      //background-color: var(--color-black-100);
-    }
+    //@at-root .appear.special & {
+    //position: relative;
+    // top: unset;
+    // bottom: 0;
+    //background-color: var(--color-black-100);
+    //}
   }
   
   //.appear-shown
@@ -60,10 +56,10 @@
     z-index: 0;
     width: 100%;
 
-    @at-root .appear.special & {
-      //position: relative;
-      // top: unset;
-      // bottom: 0;
-    }
+    //@at-root .appear.special & {
+    //position: relative;
+    // top: unset;
+    // bottom: 0;
+    //}
   }
 }

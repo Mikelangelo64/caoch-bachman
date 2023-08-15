@@ -1,7 +1,17 @@
 import { AnimationFrame, utils } from 'vevet';
 import vevet from '../config/vevet';
 
-const moveHoverImageInit = (containerClass: string, labelClass: string) => {
+interface IMoveHoverImageInit {
+  containerClass: string;
+  labelClass: string;
+  isReverse?: boolean;
+}
+
+const moveHoverImageInit: (props: IMoveHoverImageInit) => void = ({
+  containerClass,
+  labelClass,
+  isReverse = false
+}) => {
   if (!containerClass || !labelClass || vevet.isMobile) {
     return;
   }
@@ -68,18 +78,17 @@ const moveHoverImageInit = (containerClass: string, labelClass: string) => {
       const x =
         Math.min(Math.max(evt.clientX - startX, 0), rect.width) / rect.width;
 
-      progressX.target = x - 0.5;
-      progressY.target = y - 0.5;
+      progressX.target = isReverse ? -1 * (x - 0.5) : x - 0.5;
+      progressY.target = isReverse ? -1 * (y - 0.5) : y - 0.5;
 
-      frame.play();
+      if (!frame.isPlaying) {
+        frame.play();
+      }
     });
 
     container.addEventListener('mouseleave', () => {
-      frame.pause();
       progressX.target = 0;
       progressY.target = 0;
-
-      frame.play();
     });
   });
 };
