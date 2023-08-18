@@ -45,7 +45,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: px-to-rem(100);
+        height: px-to-rem(30);
         background-image: linear-gradient(180deg, var(--color-grey) 0%, var(--color-grey) 30%, rgba(var(--color-grey--rgb), 0) 100%);
       }
     }
@@ -155,9 +155,10 @@
   
   //.training-list 
   &-list {
+    padding-left: px-to-rem(20);
     list-style-type: disc;
-    list-style-position: inside;
-    font-weight: 600;
+    list-style-position: outside;
+    font-weight: 500;
     line-height: 126%;
 
     @include viewport-tablet-min {
@@ -179,7 +180,8 @@
     //.training-list__item 
     &__item {
       span {
-        margin-left: px-to-rem(-14);
+        display: block;
+        margin-left: px-to-rem(10);
       }
     }
   }

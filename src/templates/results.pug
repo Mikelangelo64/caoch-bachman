@@ -2,12 +2,16 @@
   const resultsList = [
     {
       image: '@/assets/img/results/results-1.jpg',
-      name: 'Martin К.'
-    },
-    {
-      image: '@/assets/img/results/results-2.jpg',
+      video: '@/assets/video/result-1.mp4',
+      popupname: '_popup-result-1',
       name: 'Martin К.'
     }
+    //- {
+    //-   image: '@/assets/img/results/results-2.jpg',
+    //-   video: '@/assets/video/result-1.mp4',
+    //-   popupname: '_popup-result-1',
+    //-   name: 'Martin К.'
+    //- }
   ];
 
 section.dark.results
@@ -30,16 +34,37 @@ section.dark.results
 
       .results-slider.swiper
         .swiper-wrapper
-          - for (let i=0; i < 2; i++)
+          - for (let i=0; i < 1; i++)
             each item, index in resultsList
               .swiper-slide
-                .results-slider__item
-                  .results-slider__img
-                    .results-slider__img__container
-                      img.results-slider__img__content(
-                        src=require(`${item.image}`),
-                        alt=`results-${i + index + 1}`,
-                        loading='lazy'
-                      )
+                button.results-slider__item.popup-open(
+                  data-popup=`${item.popupname}`
+                )
+                  span.results-slider__img
+                    span.results-slider__img__container
+                      //- img.results-slider__img__content(
+                      //-   src=require(`${item.image}`),
+                      //-   alt=`results-${i + index + 1}`,
+                      //-   loading='lazy'
+                      //- )
+                      video.video(
+                        disablePictureInPicture,
+                        preload='metadata',
+                        playsinline,
+                        loop,
+                        muted,
+                        autoplay
+                      ) 
+                        source(
+                          data-src=require(`${item.video}`),
+                          type='video/mp4'
+                        )
 
-                  .results-slider__title #{ item.name }
+                      span.results-slider__play
+                        <svg width="215" height="217" viewBox="0 0 215 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path class='line-big' d="M63.8964 174.103C28.7244 148.55 20.87 99.4006 46.3531 64.3261C71.8361 29.2517 121.007 21.5338 156.179 47.0878C164.551 53.1704 171.375 60.5899 176.57 68.8382" stroke="white" stroke-opacity="0.3"/>
+                          <path class='line-small' d="M96.584 158.585C128.18 166.083 158.907 150.615 165.214 124.035C171.522 97.4556 151.022 69.8302 119.426 62.3321C111.905 60.5473 104.434 60.0638 97.3289 60.7216" stroke="white" stroke-opacity="0.3"/>
+                          <path class='play' d="M121.508 103.473L100.182 116.738L99.3575 91.637L121.508 103.473Z" stroke="white" stroke-width="2"/>
+                        </svg>
+
+                  span.results-slider__title #{ item.name }

@@ -12,10 +12,10 @@ export const init = () => {
   marqueeInit();
   slidersInit();
 
-  moveHoverImageInit({
-    containerClass: 'results-slider__img',
-    labelClass: 'results-slider__img__content'
-  });
+  // moveHoverImageInit({
+  //   containerClass: 'results-slider__img',
+  //   labelClass: 'results-slider__img__content'
+  // });
   moveHoverImageInit({
     containerClass: 'statistic__img',
     labelClass: 'statistic__img__content'

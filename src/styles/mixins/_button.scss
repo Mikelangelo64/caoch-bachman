@@ -17,6 +17,7 @@
   @include transition((color 0.4s, border 0.6s));
   transform: translateZ(0);
 
+  text-decoration: unset;
   font-weight: 600;
   line-height: 146%;
   color: var(--color-theme, var(--color-highlight));

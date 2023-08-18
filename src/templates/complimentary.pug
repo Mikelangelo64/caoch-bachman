@@ -8,12 +8,12 @@
     {
       image: '@/assets/img/complimentary/complimentary-2.svg',
       title: 'Technique school',
-      description: 'Receive in depth technical break down and analysis of the most important exercises and their common mistakes and how these will help you on you journey towards the one arm handstand'
+      description: 'Receive in-depth technical breakdown and analysis of the most important exercises, their common mistakes and how these drills will help you on your journey towards the one arm handstand.'
     },
     {
       image: '@/assets/img/complimentary/complimentary-3.svg',
       title: 'Membership perks',
-      description: 'Become a pert og inner circle, get added to the private Chat to ask questions and connect with like minded athletes.'
+      description: 'Become a part of the inner circle, get added to the private chat and connect with like minded athletes.'
     }
   ];
 
@@ -22,7 +22,7 @@ section.light.complimentary(data-animate='translateY')
     .complimentary__wrapper
       .complimentary__header
         h2.complimentary__title Complimentary content
-        p.complimentary__description Every Handstand Labs athlete receive full complimentary access to:
+        p.complimentary__description Every Handstand Labs athlete receives full complimentary access to:
 
       ul.complimentary-list
         each item, index in complimentaryList
@@ -39,7 +39,9 @@ section.light.complimentary(data-animate='translateY')
             p.complimentary-list__description #{ item.description }
 
       .complimentary__bottom
-        button.complimentary__button.button-dark.popup-open(
-          data-popup='_popup-thanks'
-        )
-          span learn to one arm handstand
+        a.complimentary__button.button-dark(
+          href='https://courses.coachbachmann.com/checkout/?rid=p1x07N',
+          target='_blank',
+          rel='noreferrer'
+        ) 
+          span Learn to One Arm Handstand

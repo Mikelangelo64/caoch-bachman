@@ -27,10 +27,12 @@ section.light.whois(data-animate='translateY')
                 p.whois-list__value #{ item.value }
                 p.whois-list__description #{ item.name }
 
-          button.whois__button.button-dark.popup-open(
-            data-popup='_popup-thanks'
-          )
-            span learn to one arm handstand
+          a.whois__button.button-dark(
+            href='https://courses.coachbachmann.com/checkout/?rid=p1x07N',
+            target='_blank',
+            rel='noreferrer'
+          ) 
+            span Learn to One Arm Handstand
 
   .whois__bg
     img(src=require('@/assets/img/whois.jpg'), alt='who-is')
